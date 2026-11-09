@@ -320,19 +320,31 @@
       background: linear-gradient(135deg, var(--cyan) 0%, #00BBF9 100%);
       color: #06050C;
       font-family: 'Syne', sans-serif;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       cursor: pointer;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
       box-shadow: 0 8px 26px rgba(0, 245, 212, 0.35);
+      animation: btnPulseGlow 1.75s infinite ease-in-out;
+    }
+    @keyframes btnPulseGlow {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 24px rgba(0, 245, 212, 0.32), 0 0 0 0 rgba(0, 245, 212, 0.55);
+      }
+      50% {
+        transform: scale(1.028);
+        box-shadow: 0 12px 34px rgba(0, 245, 212, 0.62), 0 0 0 8px rgba(0, 245, 212, 0);
+      }
     }
     .btn-unlock:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.02);
       box-shadow: 0 12px 32px rgba(0, 245, 212, 0.5);
     }
     .btn-unlock:disabled {
       opacity: 0.6;
       cursor: wait;
+      animation: none;
     }
     .sec-note {
       text-align: center;
@@ -479,7 +491,7 @@
           <div id="form-err" style="display:none;color:#ff6b8b;font-size:12px;margin-bottom:10px;font-weight:600"></div>
 
           <button type="submit" class="btn-unlock" id="btn-submit">
-            🔓 DESTRAVAR MEU PACK WHOOSH GRÁTIS →
+            🔓 CLIQUE AQUI PARA DESTRAVAR MEU PACK WHOOSH →
           </button>
 
           <p class="sec-note">🔒 Uso livre em vídeos pessoais e comerciais · Envio imediato para o seu e-mail</p>
@@ -567,7 +579,7 @@
     function refreshSelectedPackUI() {
       document.getElementById('selected-pack-label').textContent = `${selectedPack.ico} Pack ${selectedPack.num} · ${selectedPack.nome} (${selectedPack.qtd} Efeitos WAV)`;
       document.getElementById('eq-text').textContent = `Pack ${selectedPack.num} · ${selectedPack.nome}`;
-      document.getElementById('btn-submit').textContent = `🔓 DESTRAVAR MEU PACK ${selectedPack.nome.toUpperCase()} GRÁTIS →`;
+      document.getElementById('btn-submit').textContent = `🔓 CLIQUE AQUI PARA DESTRAVAR MEU PACK ${selectedPack.nome.toUpperCase()} →`;
     }
 
     function selectPack(packId) {
@@ -644,14 +656,6 @@
 
       try {
         await fetch('api-leads.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-      } catch (e) {}
-
-      try {
-        await fetch('http://127.0.0.1:8095/__argon_db/capturar_lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
