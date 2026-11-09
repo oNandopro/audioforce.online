@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cofre Sonoro AudioForce · Destrave 220 Efeitos Sonoros Grátis (15 Famílias WAV)</title>
-  <meta name="description" content="Destrave gratuitamente 220 efeitos sonoros profissionais (15 famílias WAV 48kHz/24-bit) + 6 packs de trilhas da AudioForce para Reels, TikTok, Shorts e YouTube." />
+  <title>Cofre Sonoro AudioForce · Destrave Seu Pack de Efeitos Sonoros Grátis (WAV 24-bit)</title>
+  <meta name="description" content="Destrave gratuitamente o seu Pack de Efeitos Sonoros profissionais (WAV 48kHz/24-bit) da AudioForce para Reels, TikTok, Shorts e YouTube." />
+  <meta name="facebook-domain-verification" content="7jj6otf63pxk088dfwts2qxd2tpop1" />
   <meta name="theme-color" content="#080711" />
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -85,7 +86,6 @@
       color: var(--cyan);
     }
 
-    /* Hero + Gamified XP Bar */
     .hero {
       text-align: center;
       margin-bottom: 26px;
@@ -105,7 +105,7 @@
     }
     h1 {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(26px, 5vw, 44px);
+      font-size: clamp(26px, 5vw, 42px);
       line-height: 1.12;
       font-weight: 800;
       margin-bottom: 12px;
@@ -120,7 +120,6 @@
       margin: 0 auto 22px;
     }
 
-    /* XP Progress Vault Card */
     .xp-box {
       background: linear-gradient(180deg, rgba(23, 20, 43, 0.95), rgba(17, 15, 32, 0.95));
       border: 1px solid rgba(0, 245, 212, 0.28);
@@ -161,13 +160,14 @@
       margin-top: 10px;
       font-size: 12px;
       color: var(--muted);
+      flex-wrap: wrap;
+      gap: 6px;
     }
     .xp-step.done { color: var(--lime); font-weight: 700; }
 
-    /* Grid Layout */
     .vault-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 20px;
       align-items: start;
     }
@@ -202,50 +202,47 @@
     .panel p.desc {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    /* Interactive SFX Drum Pads */
-    .pads-grid {
+    /* Pack Selector Grid (1 Pack per Unlock) */
+    .packs-select-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     @media (max-width: 520px) {
-      .pads-grid { grid-template-columns: repeat(3, 1fr); }
+      .packs-select-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .pad-btn {
+    .pack-btn {
       background: var(--bg-card-2);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      padding: 12px 6px;
+      border-radius: 11px;
+      padding: 10px 8px;
       color: #fff;
       cursor: pointer;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 6px;
-      transition: all 0.18s ease;
+      gap: 8px;
+      transition: all 0.16s ease;
       font-family: 'Plus Jakarta Sans', sans-serif;
+      text-align: left;
     }
-    .pad-btn:hover {
+    .pack-btn:hover {
       border-color: var(--cyan);
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
-    .pad-btn.playing {
+    .pack-btn.selected {
       background: rgba(0, 245, 212, 0.16);
       border-color: var(--cyan);
-      box-shadow: 0 0 18px rgba(0, 245, 212, 0.35);
+      box-shadow: 0 0 16px rgba(0, 245, 212, 0.28);
     }
-    .pad-btn.tested {
-      border-color: rgba(204, 255, 0, 0.5);
-    }
-    .pad-ico { font-size: 20px; }
-    .pad-name { font-size: 12px; font-weight: 700; }
-    .pad-sub { font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+    .pack-ico { font-size: 18px; flex-shrink: 0; }
+    .pack-info { display: flex; flex-direction: column; overflow: hidden; }
+    .pack-name { font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pack-sub { font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
 
-    /* Animated Equalizer */
     .eq-bar-wrap {
       display: flex;
       align-items: flex-end;
@@ -255,7 +252,7 @@
       padding: 8px 12px;
       background: rgba(0, 0, 0, 0.35);
       border-radius: 10px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       border: 1px solid rgba(255,255,255,0.05);
     }
     .eq-bar {
@@ -273,7 +270,6 @@
       100% { height: 24px; background: var(--magenta); }
     }
 
-    /* Software Selector Pills */
     .editor-label {
       font-size: 13px;
       font-weight: 700;
@@ -305,35 +301,18 @@
       box-shadow: 0 0 12px rgba(0, 245, 212, 0.25);
     }
 
-    /* Families preview list */
-    .fam-box {
-      margin-top: 14px;
-      padding: 12px;
+    .selected-pack-banner {
+      margin-top: 12px;
+      padding: 12px 14px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .fam-title {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--lime);
-      margin-bottom: 8px;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .fam-tags {
+      background: rgba(204, 255, 0, 0.08);
+      border: 1px solid rgba(204, 255, 0, 0.3);
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .fam-tag {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      color: #D0CCE6;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
-    /* Lead Form */
     .form-group {
       margin-bottom: 14px;
     }
@@ -391,7 +370,7 @@
       background: linear-gradient(135deg, var(--cyan) 0%, #00BBF9 100%);
       color: #06050C;
       font-family: 'Syne', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 800;
       cursor: pointer;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -412,7 +391,6 @@
       margin-top: 10px;
     }
 
-    /* Unlocked Vault View */
     #vault-unlocked {
       display: none;
       margin-top: 24px;
@@ -427,7 +405,7 @@
       0% { opacity: 0; transform: scale(0.96); }
       100% { opacity: 1; transform: scale(1); }
     }
-    .btn-drive-master {
+    .btn-pack-single {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -441,35 +419,11 @@
       font-size: 18px;
       font-weight: 800;
       text-decoration: none;
-      margin: 16px 0 22px;
+      margin: 16px 0 14px;
       box-shadow: 0 10px 30px rgba(204, 255, 0, 0.35);
     }
-    .zips-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .zip-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 600;
-      transition: all 0.15s;
-    }
-    .zip-card:hover {
-      border-color: var(--cyan);
-      background: rgba(0, 245, 212, 0.12);
-    }
     .upsell-banner {
-      margin-top: 26px;
+      margin-top: 22px;
       padding: 20px;
       border-radius: 16px;
       background: linear-gradient(135deg, rgba(247, 37, 133, 0.16), rgba(123, 44, 191, 0.2));
@@ -504,15 +458,15 @@
     </header>
 
     <section class="hero">
-      <div class="kicker">⚡ ACESSO EXCLUSIVO LIBERADO PELA DM · 100% AUTORAL & LIVRE DE DIREITOS</div>
-      <h1>Destrave Seu Cofre Sonoro: 220 Efeitos Profissionais (15 Famílias WAV)</h1>
-      <p class="sub">Complete o desafio rápido de estúdio abaixo, escolha seu programa de edição e receba no seu e-mail + na tela os <strong>15 Mini-Packs SFX + 6 Packs de Trilhas Bônus</strong>.</p>
+      <div class="kicker">⚡ ACESSO LIBERADO PELA DM · 1 PACK DE EFEITOS SONOROS GRÁTIS (WAV 24-BIT)</div>
+      <h1 id="hero-title">Destrave Seu Pack de Efeitos Sonoros Grátis</h1>
+      <p class="sub">Complete a calibragem rápida abaixo, escolha qual <strong>1 Pack de Efeitos Sonoros</strong> você quer resgatar agora e libere o download imediato em alta definição (WAV 48kHz/24-bit).</p>
     </section>
 
     <!-- Barra de XP Gamificada -->
     <div class="xp-box">
       <div class="xp-head">
-        <span class="xp-status" id="xp-label">🔒 STATUS DO COFRE: AGUARDANDO CALIBRAGEM DE ESTÚDIO...</span>
+        <span class="xp-status" id="xp-label">🔒 STATUS DO COFRE: ESCOLHA O SEU PACK DE BRINDE ABAIXO...</span>
         <span class="xp-pct" id="xp-pct">25% XP</span>
       </div>
       <div class="xp-track">
@@ -520,46 +474,20 @@
       </div>
       <div class="xp-steps">
         <span class="xp-step done" id="st-1">✓ 1. Link VIP da DM validado</span>
-        <span class="xp-step" id="st-2">○ 2. Testar Console SFX / Escolher Editor (+50% XP)</span>
-        <span class="xp-step" id="st-3">○ 3. Destravar Cofre com E-mail (100% XP)</span>
+        <span class="xp-step" id="st-2">○ 2. Escolher 1 Pack + Editor (+50% XP)</span>
+        <span class="xp-step" id="st-3">○ 3. Destravar Meu Pack com E-mail (100% XP)</span>
       </div>
     </div>
 
     <!-- Área Principal em 2 Colunas -->
     <div class="vault-grid" id="vault-locked-grid">
-      <!-- Coluna 1: Console Interativo + Escolha de Editor -->
+      <!-- Coluna 1: Escolha de 1 Pack de Brinde + Editor -->
       <div class="panel">
-        <span class="panel-tag">PASSO 1 · CONSOLE DE MIXAGEM INTERATIVO</span>
-        <h2>Teste os Timbres do Cofre (WAV 48kHz)</h2>
-        <p class="desc">Toque nos pads abaixo para ouvir uma prévia real das famílias sonoras e selecione o seu software de edição favorito:</p>
+        <span class="panel-tag">PASSO 1 · ESCOLHA 1 PACK PARA DESTRAVAR AGORA</span>
+        <h2>Qual Pack de Efeitos Sonoros você quer baixar grátis?</h2>
+        <p class="desc">Clique em um dos packs abaixo para selecionar (você libera <strong>1 Pack gratuito</strong> nesta retirada — siga nossa página para colecionar os próximos brindes nos novos Reels!):</p>
 
-        <div class="pads-grid">
-          <button type="button" class="pad-btn" onclick="playPad(this, 'amostras/previa-whoosh.mp3', 'Whoosh')">
-            <span class="pad-ico">🌪️</span>
-            <span class="pad-name">Whoosh</span>
-            <span class="pad-sub">12 sons</span>
-          </button>
-          <button type="button" class="pad-btn" onclick="playPad(this, 'amostras/previa-riser.mp3', 'Riser')">
-            <span class="pad-ico">🚀</span>
-            <span class="pad-name">Riser</span>
-            <span class="pad-sub">12 sons</span>
-          </button>
-          <button type="button" class="pad-btn" onclick="playPad(this, 'amostras/previa-impacto.mp3', 'Impacto')">
-            <span class="pad-ico">💥</span>
-            <span class="pad-name">Impacto</span>
-            <span class="pad-sub">12 sons</span>
-          </button>
-          <button type="button" class="pad-btn" onclick="playPad(this, 'amostras/previa-glitch.mp3', 'Glitch')">
-            <span class="pad-ico">⚡</span>
-            <span class="pad-name">Glitch</span>
-            <span class="pad-sub">12 sons</span>
-          </button>
-          <button type="button" class="pad-btn" onclick="playPad(this, 'amostras/previa-clique.mp3', 'Clique')">
-            <span class="pad-ico">🖱️</span>
-            <span class="pad-name">Clique</span>
-            <span class="pad-sub">12 sons</span>
-          </button>
-        </div>
+        <div class="packs-select-grid" id="packs-grid"></div>
 
         <div class="eq-bar-wrap" id="eq-viz">
           <div class="eq-bar" style="animation-delay:0.05s"></div>
@@ -572,9 +500,7 @@
           <div class="eq-bar" style="animation-delay:0.28s"></div>
           <div class="eq-bar" style="animation-delay:0.18s"></div>
           <div class="eq-bar" style="animation-delay:0.12s"></div>
-          <div class="eq-bar" style="animation-delay:0.22s"></div>
-          <div class="eq-bar" style="animation-delay:0.04s"></div>
-          <span id="eq-text" style="font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--muted);margin-left:8px">Toque em um Pad para ouvir 🔊</span>
+          <span id="eq-text" style="font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--muted);margin-left:8px">Selecione o seu Pack acima 🔊</span>
         </div>
 
         <label class="editor-label">Qual editor você mais usa hoje? <span style="color:var(--cyan);font-size:11px">(+25% XP)</span></label>
@@ -586,33 +512,20 @@
           <button type="button" class="editor-pill" onclick="selectEditor(this, 'Outro / Celular')">⚡ Outro</button>
         </div>
 
-        <div class="fam-box">
-          <div class="fam-title">📦 O QUE ESTÁ DENTRO DO COFRE (15 FAMÍLIAS · 220 SONS WAV):</div>
-          <div class="fam-tags">
-            <span class="fam-tag">1. Whoosh (12)</span>
-            <span class="fam-tag">2. Riser (12)</span>
-            <span class="fam-tag">3. Impacto (12)</span>
-            <span class="fam-tag">4. Glitch (12)</span>
-            <span class="fam-tag">5. Clique (12)</span>
-            <span class="fam-tag">6. Sweep (16)</span>
-            <span class="fam-tag">7. Pop (16)</span>
-            <span class="fam-tag">8. Boom 808 (16)</span>
-            <span class="fam-tag">9. Notificação (16)</span>
-            <span class="fam-tag">10. Textura (16)</span>
-            <span class="fam-tag">11. Transição (16)</span>
-            <span class="fam-tag">12. Digital HUD (16)</span>
-            <span class="fam-tag">13. Tensão (16)</span>
-            <span class="fam-tag">14. Cômico (16)</span>
-            <span class="fam-tag">15. Drop (16)</span>
+        <div class="selected-pack-banner">
+          <div>
+            <div style="font-size:10px;font-family:'JetBrains Mono',monospace;color:var(--lime);font-weight:700">🎁 SEU BRINDE SELECIONADO (1 PACK):</div>
+            <div id="selected-pack-label" style="font-size:14px;font-weight:800;color:#fff;margin-top:2px">🌪️ Pack 01 · Whoosh (12 Efeitos WAV)</div>
           </div>
+          <span style="font-size:11px;padding:4px 9px;border-radius:999px;background:rgba(0,245,212,0.14);color:var(--cyan);font-weight:700">100% Grátis</span>
         </div>
       </div>
 
       <!-- Coluna 2: Formulário de Destravamento por E-mail -->
       <div class="panel" style="border-color: rgba(0, 245, 212, 0.35);">
-        <span class="panel-tag" style="background:rgba(204,255,0,0.12);color:var(--lime);border-color:rgba(204,255,0,0.35)">PASSO 2 · CHAVE DE ACESSO AO COFRE</span>
-        <h2>Onde enviamos o seu Pack Grátis?</h2>
-        <p class="desc">Digite seu melhor e-mail abaixo. Assim que confirmar, o Cofre abre <strong>instantaneamente nesta tela</strong> e também enviamos uma cópia de segurança para o seu e-mail!</p>
+        <span class="panel-tag" style="background:rgba(204,255,0,0.12);color:var(--lime);border-color:rgba(204,255,0,0.35)">PASSO 2 · LIBERAÇÃO DO SEU PACK</span>
+        <h2>Onde liberamos o seu Pack Grátis?</h2>
+        <p class="desc">Digite seu nome e melhor e-mail abaixo. Assim que confirmar, o botão de download do <strong>seu Pack escolhido</strong> abre instantaneamente nesta tela!</p>
 
         <form id="lead-form" onsubmit="submitLead(event)">
           <div class="form-group">
@@ -621,80 +534,106 @@
           </div>
 
           <div class="form-group">
-            <label for="lead-email">Seu Melhor E-mail (para receber o link do Drive)</label>
+            <label for="lead-email">Seu Melhor E-mail (para liberar o seu Pack)</label>
             <input type="email" id="lead-email" class="form-input" placeholder="seuemail@gmail.com" required oninput="onEmailInput()" />
           </div>
 
           <label class="optin-box">
             <input type="checkbox" id="lead-optin" checked />
             <span class="optin-text">
-              <strong>Sim! Quero receber novos packs gratuitos</strong>, dicas práticas de Sound Design e ofertas VIP de lançamentos da AudioForce no meu e-mail. <span style="color:var(--muted)">(Zero spam, cancele quando quiser).</span>
+              <strong>Sim! Quero receber avisos dos próximos packs gratuitos</strong>, dicas práticas de Sound Design e ofertas VIP da AudioForce no meu e-mail. <span style="color:var(--muted)">(Zero spam, saia quando quiser).</span>
             </span>
           </label>
 
           <div id="form-err" style="display:none;color:#ff6b8b;font-size:12px;margin-bottom:10px;font-weight:600"></div>
 
           <button type="submit" class="btn-unlock" id="btn-submit">
-            🔓 DESTRAVAR MEUS 220 SONS GRÁTIS AGORA →
+            🔓 DESTRAVAR MEU PACK DE EFEITOS SONOROS GRÁTIS →
           </button>
 
-          <p class="sec-note">🔒 Seus dados estão 100% seguros · Liberação imediata no Google Drive + Download Direto</p>
+          <p class="sec-note">🔒 Uso livre em vídeos pessoais e comerciais · Download imediato em WAV 24-bit</p>
         </form>
       </div>
     </div>
 
-    <!-- COFRE DESTRAVADO (Aparece imediatamente após enviar o e-mail!) -->
+    <!-- COFRE DESTRAVADO (Libera APENAS o 1 Pack escolhido pelo Lead!) -->
     <section id="vault-unlocked">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
-        <span class="kicker" style="margin:0;background:rgba(204,255,0,0.2);color:var(--lime)">🔓 COFRE SONORO DESTRAVADO · 100% XP CONCLUÍDO!</span>
+        <span class="kicker" style="margin:0;background:rgba(204,255,0,0.2);color:var(--lime)">🔓 PACK DESTRAVADO · 100% XP CONCLUÍDO!</span>
         <span id="unlocked-email-badge" style="font-size:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace"></span>
       </div>
 
-      <h2 style="font-family:'Syne',sans-serif;font-size:28px;margin-top:12px">Parabéns! Seus 220 Efeitos Sonoros + 6 Packs de Trilhas estão liberados 🎉</h2>
-      <p style="color:#C8C4DC;font-size:14px;margin-top:4px">Enviamos uma cópia do acesso para o seu e-mail e também já liberamos a pasta oficial do Google Drive e os downloads diretos abaixo:</p>
+      <h2 id="unlocked-pack-title" style="font-family:'Syne',sans-serif;font-size:26px;margin-top:12px">Parabéns! O seu Pack de Efeitos Sonoros Grátis está liberado 🎉</h2>
+      <p id="unlocked-pack-desc" style="color:#C8C4DC;font-size:14px;margin-top:4px">Clique no botão abaixo para baixar agora o seu pacote em WAV 48kHz / 24-bit pronto para arrastar na timeline:</p>
 
-      <a href="https://drive.google.com/drive/folders/1pwEYNaf2Y-bENCTm0pifmiWAwucCFZM8?usp=sharing" target="_blank" rel="noopener" class="btn-drive-master">
-        📁 ABRIR PASTA COMPLETA NO GOOGLE DRIVE (15 FAMÍLIAS + 6 TRILHAS BÔNUS) ↗
+      <a id="unlocked-pack-btn" href="packs/AF%20Brinde%20-%20Whoosh.zip" download class="btn-pack-single">
+        ⬇ BAIXAR MEU PACK GRÁTIS AGORA (.ZIP WAV 24-BIT)
       </a>
 
-      <div style="margin-top:18px">
-        <div style="font-size:13px;font-weight:700;color:var(--cyan);font-family:'JetBrains Mono',monospace;margin-bottom:8px">
-          ⚡ OU BAIXE CADA FAMÍLIA DIRETO AQUI NO NAVEGADOR (.ZIP WAV 24-BIT):
-        </div>
-        <div class="zips-grid">
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Whoosh.zip" download><span>🌪️ 01. Whoosh (12)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Riser.zip" download><span>🚀 02. Riser (12)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Impacto.zip" download><span>💥 03. Impacto (12)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Glitch.zip" download><span>⚡ 04. Glitch (12)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Clique.zip" download><span>🖱️ 05. Clique (12)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Sweep.zip" download><span>🌊 06. Sweep (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Pop.zip" download><span>🫧 07. Pop (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Boom.zip" download><span>💣 08. Boom (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Notifica%C3%A7%C3%A3o.zip" download><span>🔔 09. Notificação (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Textura.zip" download><span>🌌 10. Textura (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Transi%C3%A7%C3%A3o.zip" download><span>⚔️ 11. Transição (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Digital.zip" download><span>🤖 12. Digital (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Tens%C3%A3o.zip" download><span>💓 13. Tensão (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20C%C3%B4mico.zip" download><span>🎭 14. Cômico (16)</span><span>⬇</span></a>
-          <a class="zip-card" href="packs/AF%20Brinde%20-%20Drop.zip" download><span>🔊 15. Drop (16)</span><span>⬇</span></a>
-        </div>
+      <div style="padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:12px;color:#D0CCE6">
+        💡 <strong>Quer ganhar os outros packs de brinde?</strong> Continue seguindo a página oficial da <strong>AudioForce</strong> e comentando nos próximos Reels — cada vídeo novo traz dicas práticas e libera um pack diferente para sua coleção!
       </div>
 
       <!-- Upsell Imediato para o Catálogo Principal -->
       <div class="upsell-banner">
-        <div style="font-size:12px;font-weight:800;color:var(--lime);letter-spacing:1px;text-transform:uppercase">🔥 OFERTA VIP DE BOAS-VINDAS · SÓ PARA QUEM DESTRAVOU O COFRE</div>
-        <h3 style="font-family:'Syne',sans-serif;font-size:21px;margin:6px 0">Quer o Arsenal Completo da AudioForce com +33.000 Efeitos Organizados?</h3>
-        <p style="font-size:13px;color:#E2DFF0;max-width:640px;margin:0 auto">Conheça nossos Mini Kits a partir de <strong>R$ 19</strong>, o <strong>Combo Essencial (10 Packs)</strong> ou a <strong>Biblioteca Completa (52 Packs SFX + 6 Packs de Música)</strong> com entrega automática em 1 minuto via Mercado Livre.</p>
+        <div style="font-size:12px;font-weight:800;color:var(--lime);letter-spacing:1px;text-transform:uppercase">🔥 OFERTA VIP DE BOAS-VINDAS · ACERVO COMPLETO AUDIOFORCE</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:21px;margin:6px 0">Não quer esperar? Leve o Arsenal Completo com +33.000 Efeitos Organizados!</h3>
+        <p style="font-size:13px;color:#E2DFF0;max-width:640px;margin:0 auto">Conheça nossos Packs Profissionais a partir de <strong>R$ 19</strong>, o <strong>Combo Essencial (10 Packs)</strong> ou a <strong>Biblioteca Completa (52 Packs SFX + 6 Packs de Música)</strong> com entrega imediata via Mercado Livre.</p>
         <a href="../#combos" class="btn-upsell">⚡ VER CATÁLOGO COMPLETO AUDIOFORCE →</a>
       </div>
     </section>
   </div>
 
   <script>
+    const PACKS_BRINDE = [
+      { id: 'whoosh', num: '01', nome: 'Whoosh', qtd: 12, ico: '🌪️', zip: 'packs/AF%20Brinde%20-%20Whoosh.zip', audio: 'amostras/previa-whoosh.mp3' },
+      { id: 'riser', num: '02', nome: 'Riser', qtd: 12, ico: '🚀', zip: 'packs/AF%20Brinde%20-%20Riser.zip', audio: 'amostras/previa-riser.mp3' },
+      { id: 'impacto', num: '03', nome: 'Impacto', qtd: 12, ico: '💥', zip: 'packs/AF%20Brinde%20-%20Impacto.zip', audio: 'amostras/previa-impacto.mp3' },
+      { id: 'glitch', num: '04', nome: 'Glitch', qtd: 12, ico: '⚡', zip: 'packs/AF%20Brinde%20-%20Glitch.zip', audio: 'amostras/previa-glitch.mp3' },
+      { id: 'clique', num: '05', nome: 'Clique & UI', qtd: 12, ico: '🖱️', zip: 'packs/AF%20Brinde%20-%20Clique.zip', audio: 'amostras/previa-clique.mp3' },
+      { id: 'sweep', num: '06', nome: 'Sweep', qtd: 16, ico: '🌊', zip: 'packs/AF%20Brinde%20-%20Sweep.zip', audio: null },
+      { id: 'pop', num: '07', nome: 'Pop & Bolhas', qtd: 16, ico: '🫧', zip: 'packs/AF%20Brinde%20-%20Pop.zip', audio: null },
+      { id: 'boom', num: '08', nome: 'Boom 808', qtd: 16, ico: '💣', zip: 'packs/AF%20Brinde%20-%20Boom.zip', audio: null },
+      { id: 'notificacao', num: '09', nome: 'Notificação', qtd: 16, ico: '🔔', zip: 'packs/AF%20Brinde%20-%20Notifica%C3%A7%C3%A3o.zip', audio: null },
+      { id: 'textura', num: '10', nome: 'Textura & Amb.', qtd: 16, ico: '🌌', zip: 'packs/AF%20Brinde%20-%20Textura.zip', audio: null },
+      { id: 'transicao', num: '11', nome: 'Transição', qtd: 16, ico: '⚔️', zip: 'packs/AF%20Brinde%20-%20Transi%C3%A7%C3%A3o.zip', audio: null },
+      { id: 'digital', num: '12', nome: 'Digital HUD', qtd: 16, ico: '🤖', zip: 'packs/AF%20Brinde%20-%20Digital.zip', audio: null },
+      { id: 'tensao', num: '13', nome: 'Tensão & Pulso', qtd: 16, ico: '💓', zip: 'packs/AF%20Brinde%20-%20Tens%C3%A3o.zip', audio: null },
+      { id: 'comico', num: '14', nome: 'Cômico', qtd: 16, ico: '🎭', zip: 'packs/AF%20Brinde%20-%20C%C3%B4mico.zip', audio: null },
+      { id: 'drop', num: '15', nome: 'Sub Drop', qtd: 16, ico: '🔊', zip: 'packs/AF%20Brinde%20-%20Drop.zip', audio: null }
+    ];
+
     let currentAudio = null;
-    let currentPad = null;
+    let selectedPack = PACKS_BRINDE[0];
     let selectedEditor = 'CapCut (PC / Mobile)';
     let xpStep2Done = false;
+
+    function initPacksGrid() {
+      const params = new URLSearchParams(window.location.search);
+      const packParam = (params.get('pack') || '').toLowerCase().trim();
+      const found = PACKS_BRINDE.find(p => p.id === packParam || p.num === packParam);
+      if (found) {
+        selectedPack = found;
+      }
+
+      const grid = document.getElementById('packs-grid');
+      grid.innerHTML = PACKS_BRINDE.map(p => `
+        <button type="button" class="pack-btn ${p.id === selectedPack.id ? 'selected' : ''}" data-pack="${p.id}" onclick="selectPack('${p.id}')">
+          <span class="pack-ico">${p.ico}</span>
+          <span class="pack-info">
+            <span class="pack-name">${p.num}. ${p.nome}</span>
+            <span class="pack-sub">${p.qtd} sons WAV</span>
+          </span>
+        </button>
+      `).join('');
+
+      refreshSelectedPackUI();
+    }
+
+    function refreshSelectedPackUI() {
+      document.getElementById('selected-pack-label').textContent = `${selectedPack.ico} Pack ${selectedPack.num} · ${selectedPack.nome} (${selectedPack.qtd} Efeitos WAV)`;
+      document.getElementById('btn-submit').textContent = `🔓 DESTRAVAR MEU PACK ${selectedPack.nome.toUpperCase()} GRÁTIS →`;
+    }
 
     function updateXP(pct, label, step2, step3) {
       document.getElementById('xp-fill').style.width = pct + '%';
@@ -704,32 +643,41 @@
       if (step3) document.getElementById('st-3').className = 'xp-step done';
     }
 
-    function playPad(btn, src, name) {
+    function selectPack(packId) {
+      const p = PACKS_BRINDE.find(x => x.id === packId);
+      if (!p) return;
+      selectedPack = p;
+
+      document.querySelectorAll('.pack-btn').forEach(el => {
+        el.classList.toggle('selected', el.getAttribute('data-pack') === packId);
+      });
+      refreshSelectedPackUI();
+
+      if (!xpStep2Done) {
+        xpStep2Done = true;
+        updateXP(65, `⚡ PACK ${p.nome.toUpperCase()} SELECIONADO! DIGITE SEU E-MAIL PARA LIBERAR`, true, false);
+      }
+
       if (currentAudio) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
       }
-      if (currentPad) currentPad.classList.remove('playing');
-
-      if (!xpStep2Done) {
-        xpStep2Done = true;
-        updateXP(65, '⚡ TIMBRE CALIBRADO! AGORA DIGITE SEU E-MAIL PARA DESTRAVAR OS 220 SONS', true, false);
-      }
-
-      btn.classList.add('playing', 'tested');
-      currentPad = btn;
       const eq = document.getElementById('eq-viz');
       const eqTxt = document.getElementById('eq-text');
-      eq.classList.add('active');
-      eqTxt.textContent = 'Tocando prévia: Família ' + name + ' (WAV 48kHz)...';
 
-      currentAudio = new Audio(src);
-      currentAudio.play().catch(() => {});
-      currentAudio.onended = () => {
-        btn.classList.remove('playing');
+      if (p.audio) {
+        eq.classList.add('active');
+        eqTxt.textContent = `Tocando prévia: Pack ${p.num} · ${p.nome} (${p.qtd} sons WAV)...`;
+        currentAudio = new Audio(p.audio);
+        currentAudio.play().catch(() => {});
+        currentAudio.onended = () => {
+          eq.classList.remove('active');
+          eqTxt.textContent = `Pack ${p.num} (${p.nome}) selecionado ✓ Agora preencha seu e-mail!`;
+        };
+      } else {
         eq.classList.remove('active');
-        eqTxt.textContent = 'Prévia ' + name + ' concluída ✓ Toque em outra família!';
-      };
+        eqTxt.textContent = `Pack ${p.num} · ${p.nome} (${p.qtd} sons WAV) selecionado ✓ Preencha seu e-mail ao lado!`;
+      }
     }
 
     function selectEditor(btn, editorName) {
@@ -738,14 +686,14 @@
       selectedEditor = editorName;
       if (!xpStep2Done) {
         xpStep2Done = true;
-        updateXP(65, '⚡ EDITOR CONFIGURADO (' + editorName + ')! DIGITE SEU E-MAIL PARA ABRIR O COFRE', true, false);
+        updateXP(65, '⚡ EDITOR CONFIGURADO (' + editorName + ')! DIGITE SEU E-MAIL PARA LIBERAR SEU PACK', true, false);
       }
     }
 
     function onEmailInput() {
       const val = document.getElementById('lead-email').value.trim();
       if (val.includes('@') && val.includes('.')) {
-        updateXP(85, '🔑 CHAVE DE E-MAIL PRONTA! CLIQUE NO BOTÃO PARA DESTRAVAR 100%', true, false);
+        updateXP(85, '🔑 CHAVE DE E-MAIL PRONTA! CLIQUE NO BOTÃO PARA LIBERAR SEU PACK', true, false);
       }
     }
 
@@ -764,17 +712,17 @@
       }
       errEl.style.display = 'none';
       btn.disabled = true;
-      btn.textContent = '⏳ DESTRAVANDO COFRE E ENVIANDO PACK...';
+      btn.textContent = '⏳ LIBERANDO SEU PACK GRÁTIS...';
 
       const payload = {
         nome: nome || 'Criador(a)',
         email: email,
         editor: selectedEditor,
+        pack_escolhido: `Pack ${selectedPack.num} - ${selectedPack.nome}`,
         aceita_marketing: optin,
-        origem: new URLSearchParams(window.location.search).get('utm_source') || 'ig-fb-quero'
+        origem: (new URLSearchParams(window.location.search).get('utm_source') || 'ig-fb-quero') + `:${selectedPack.id}`
       };
 
-      // Tenta gravar no servidor local Argon (quando rodando no painel) e/ou no api-leads.php (quando na Hostinger)
       try {
         await fetch('/__argon_db/capturar_lead', {
           method: 'POST',
@@ -799,21 +747,28 @@
         });
       } catch (e) {}
 
-      // Dispara evento de Lead no Google Tag Manager / Meta Pixel
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'generate_lead',
-        lead_origin: 'brinde_quero_220_sons',
+        lead_origin: 'brinde_quero_1_pack',
+        lead_pack: selectedPack.id,
         lead_editor: selectedEditor,
         lead_optin: optin
       });
 
-      updateXP(100, '🔓 COFRE 100% DESTRAVADO! ACESSO LIBERADO NA TELA E NO SEU E-MAIL', true, true);
-      document.getElementById('unlocked-email-badge').textContent = '📩 Cópia enviada para: ' + email;
+      // Atualiza o Cofre Destravado para liberar APENAS o 1 Pack escolhido!
+      document.getElementById('unlocked-pack-title').textContent = `${selectedPack.ico} Seu Pack ${selectedPack.num} (${selectedPack.nome} · ${selectedPack.qtd} Sons WAV) está liberado! 🎉`;
+      document.getElementById('unlocked-pack-btn').href = selectedPack.zip;
+      document.getElementById('unlocked-pack-btn').textContent = `⬇ BAIXAR PACK ${selectedPack.num}: ${selectedPack.nome.toUpperCase()} (${selectedPack.qtd} SONS WAV 24-BIT)`;
+
+      updateXP(100, `🔓 PACK ${selectedPack.nome.toUpperCase()} DESTRAVADO COM SUCESSO!`, true, true);
+      document.getElementById('unlocked-email-badge').textContent = '📩 Registrado para: ' + email;
       document.getElementById('vault-unlocked').style.display = 'block';
-      btn.textContent = '✅ COFRE DESTRAVADO COM SUCESSO! ROLE PARA BAIXO ↓';
+      btn.textContent = '✅ PACK LIBERADO ABAIXO! ↓';
       document.getElementById('vault-unlocked').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    initPacksGrid();
   </script>
 </body>
 </html>
