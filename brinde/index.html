@@ -496,7 +496,7 @@
 
   <div class="wrap">
     <header class="topbar">
-      <a href="/" class="brand">
+      <a href="../" class="brand">
         <span class="brand-dot"></span>
         <span>AUDIOFORCE <span style="color:var(--cyan);font-size:12px;font-family:'JetBrains Mono',monospace">STUDIO VAULT</span></span>
       </a>
@@ -685,7 +685,7 @@
         <div style="font-size:12px;font-weight:800;color:var(--lime);letter-spacing:1px;text-transform:uppercase">🔥 OFERTA VIP DE BOAS-VINDAS · SÓ PARA QUEM DESTRAVOU O COFRE</div>
         <h3 style="font-family:'Syne',sans-serif;font-size:21px;margin:6px 0">Quer o Arsenal Completo da AudioForce com +33.000 Efeitos Organizados?</h3>
         <p style="font-size:13px;color:#E2DFF0;max-width:640px;margin:0 auto">Conheça nossos Mini Kits a partir de <strong>R$ 19</strong>, o <strong>Combo Essencial (10 Packs)</strong> ou a <strong>Biblioteca Completa (52 Packs SFX + 6 Packs de Música)</strong> com entrega automática em 1 minuto via Mercado Livre.</p>
-        <a href="/#combos" class="btn-upsell">⚡ VER CATÁLOGO COMPLETO AUDIOFORCE →</a>
+        <a href="../#combos" class="btn-upsell">⚡ VER CATÁLOGO COMPLETO AUDIOFORCE →</a>
       </div>
     </section>
   </div>
@@ -777,6 +777,14 @@
       // Tenta gravar no servidor local Argon (quando rodando no painel) e/ou no api-leads.php (quando na Hostinger)
       try {
         await fetch('/__argon_db/capturar_lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {}
+
+      try {
+        await fetch('http://127.0.0.1:8095/__argon_db/capturar_lead', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
