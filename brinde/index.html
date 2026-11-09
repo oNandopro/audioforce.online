@@ -491,7 +491,7 @@
           <div id="form-err" style="display:none;color:#ff6b8b;font-size:12px;margin-bottom:10px;font-weight:600"></div>
 
           <button type="submit" class="btn-unlock" id="btn-submit">
-            🔓 CLIQUE AQUI PARA DESTRAVAR MEU PACK WHOOSH →
+            Clique Aqui para receber seu Pack Whoosh diretamente no seu e-mail.
           </button>
 
           <p class="sec-note">🔒 Uso livre em vídeos pessoais e comerciais · Envio imediato para o seu e-mail</p>
@@ -501,12 +501,7 @@
 
     <!-- CONFIRMAÇÃO DE ENVIO POR E-MAIL -->
     <section id="vault-unlocked">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
-        <span style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:12px;padding:6px 12px;border-radius:999px;background:rgba(204,255,0,0.2);color:var(--lime);font-weight:700">📩 E-MAIL ENVIADO COM SUCESSO!</span>
-        <span id="unlocked-email-badge" style="font-size:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace"></span>
-      </div>
-
-      <h2 id="unlocked-pack-title" style="font-family:'Syne',sans-serif;font-size:25px;margin-top:14px">Verifique sua Caixa de Entrada! O seu Pack já foi enviado 🎉</h2>
+      <h2 id="unlocked-pack-title" style="font-family:'Syne',sans-serif;font-size:23px;margin-top:0;line-height:1.35">📩 Enviamos o seu Pack para o seu e-mail! 🎉</h2>
       <div class="email-sent-box">
         <p id="unlocked-pack-desc" style="font-size:14px;line-height:1.6;color:#E2DFF0">
           Acabamos de enviar o link de download do seu <strong>Pack de Efeitos Sonoros (WAV 24-bit)</strong> + as instruções de uso diretamente para o seu e-mail.<br/><br/>
@@ -579,7 +574,7 @@
     function refreshSelectedPackUI() {
       document.getElementById('selected-pack-label').textContent = `${selectedPack.ico} Pack ${selectedPack.num} · ${selectedPack.nome} (${selectedPack.qtd} Efeitos WAV)`;
       document.getElementById('eq-text').textContent = `Pack ${selectedPack.num} · ${selectedPack.nome}`;
-      document.getElementById('btn-submit').textContent = `🔓 CLIQUE AQUI PARA DESTRAVAR MEU PACK ${selectedPack.nome.toUpperCase()} →`;
+      document.getElementById('btn-submit').textContent = `Clique Aqui para receber seu Pack ${selectedPack.nome} diretamente no seu e-mail.`;
     }
 
     function selectPack(packId) {
@@ -670,12 +665,18 @@
         lead_editor: selectedEditor
       });
 
-      document.getElementById('unlocked-pack-title').textContent = `${selectedPack.ico} Enviamos o Pack ${selectedPack.num} (${selectedPack.nome}) para o seu e-mail! 🎉`;
-      document.getElementById('unlocked-email-badge').textContent = '📩 Enviado para: ' + email;
+      const player = document.getElementById('pack-preview-player');
+      if (player) { try { player.pause(); } catch (e) {} }
+      const heroEl = document.querySelector('.hero');
+      if (heroEl) heroEl.style.display = 'none';
+      const lockedGrid = document.getElementById('vault-locked-grid');
+      if (lockedGrid) lockedGrid.style.display = 'none';
+
+      document.getElementById('unlocked-pack-title').textContent = `${selectedPack.ico} Enviamos o Pack ${selectedPack.num} (${selectedPack.nome}) para o e-mail: ${email} 🎉`;
       document.getElementById('vault-unlocked').style.display = 'block';
-      btn.textContent = '✅ PACK ENVIADO PARA O SEU E-MAIL! ↓';
+      btn.textContent = `Clique Aqui para receber seu Pack ${selectedPack.nome} diretamente no seu e-mail.`;
       btn.disabled = false;
-      document.getElementById('vault-unlocked').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     initPacksGrid();
