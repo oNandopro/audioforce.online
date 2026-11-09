@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>AudioForce · Redirecionando...</title>
+  <script>
+    (function() {
+      var p = window.location.pathname || "";
+      var m = p.match(/^\/l\/([a-z0-9\-_]+)/i);
+      if (m) {
+        var code = m[1].toLowerCase();
+        var parts = code.split("-");
+        var mapRede = {ig: "instagram", fb: "facebook", tt: "tiktok", yt: "youtube", wa: "whatsapp", ml: "mercadolivre"};
+        var mapCanal = {bio: "bio", dm: "dm", cm: "comentario", st: "stories", rl: "reels", fd: "feed", ad: "anuncio"};
+        var src = mapRede[parts[0]] || parts[0] || "direto";
+        var med = mapCanal[parts[1]] || parts[1] || "link";
+        var camp = "organico";
+        var pack = "";
+        for (var i = 2; i < parts.length; i++) {
+          if (/^p\d{1,3}$/.test(parts[i])) {
+            var num = parseInt(parts[i].slice(1), 10);
+            pack = num >= 200 ? ("af-" + num) : ("af-" + String(num).padStart(3, "0"));
+          } else {
+            camp = parts[i];
+          }
+        }
+        var dest = "/?utm_source=" + encodeURIComponent(src) + "&utm_medium=" + encodeURIComponent(med) + "&utm_campaign=" + encodeURIComponent(camp);
+        if (pack) dest += "&pack=" + encodeURIComponent(pack);
+        if (code.indexOf("brinde") !== -1) dest = "/brinde/" + dest;
+        window.location.replace(dest);
+        return;
+      }
+      window.location.replace("/");
+    })();
+  </script>
+</head>
+<body style="background:#080711;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">
+  Redirecionando para AudioForce...
+</body>
+</html>

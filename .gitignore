@@ -1,0 +1,4 @@
+*.bak*
+__pycache__/
+servidor_editor_af.py
+teste-gtm.html

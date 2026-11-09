@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="100%">
+  <defs>
+    <linearGradient id="af-h-sonic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5D4" />
+      <stop offset="50%" stop-color="#F72585" />
+      <stop offset="100%" stop-color="#7209B7" />
+    </linearGradient>
+    <linearGradient id="af-h-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5D4" />
+      <stop offset="100%" stop-color="#2EF2FF" />
+    </linearGradient>
+    <filter id="af-h-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g transform="translate(15, 10) scale(0.4)">
+    <circle cx="250" cy="250" r="215" fill="none" stroke="#251F45" stroke-width="3" stroke-dasharray="3 11" opacity="0.8" />
+    <path d="M 360 170 A 120 120 0 0 1 360 330" fill="none" stroke="url(#af-h-cyan)" stroke-width="7" stroke-linecap="round" filter="url(#af-h-glow)" />
+    <path d="M 395 140 A 160 160 0 0 1 395 360" fill="none" stroke="#F72585" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+    
+    <g transform="translate(10, 0)">
+      <path d="M 125 150 C 185 110, 275 140, 315 200 L 275 225 C 245 180, 180 160, 135 185 Z" fill="url(#af-h-cyan)" />
+      <path d="M 125 350 C 185 390, 275 360, 315 300 L 275 275 C 245 320, 180 340, 135 315 Z" fill="#F72585" />
+      <polygon points="175,190 280,250 175,310" fill="url(#af-h-sonic)" />
+      <path d="M 150 250 L 180 250 L 195 210 L 210 290 L 225 170 L 240 330 L 255 220 L 270 275 L 285 250 L 310 250" 
+            fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#af-h-glow)" />
+    </g>
+  </g>
+
+  <g transform="translate(235, 115)">
+    <text x="0" y="0" font-family="'Space Grotesk', 'Montserrat', 'Segoe UI', sans-serif" 
+          font-size="68" font-weight="800" letter-spacing="4" fill="#FFFFFF">AUDIO</text>
+    <text x="245" y="0" font-family="'Space Grotesk', 'Montserrat', 'Segoe UI', sans-serif" 
+          font-size="68" font-weight="800" letter-spacing="4" fill="url(#af-h-sonic)" filter="url(#af-h-glow)">FORCE</text>
+    <circle cx="505" cy="-14" r="7" fill="#00F5D4" filter="url(#af-h-glow)" />
+  </g>
+
+  <g transform="translate(235, 155)">
+    <rect x="0" y="2" width="3" height="14" rx="1.5" fill="#00F5D4" />
+    <rect x="6" y="-2" width="3" height="18" rx="1.5" fill="#F72585" />
+    <rect x="12" y="5" width="3" height="11" rx="1.5" fill="#7209B7" />
+    <rect x="18" y="0" width="3" height="16" rx="1.5" fill="#CCFF00" />
+    <text x="35" y="14" font-family="'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" 
+          font-size="15" font-weight="700" letter-spacing="7" fill="#94A3B8">PRO SOUND &amp; MUSIC ASSETS</text>
+  </g>
+</svg>
